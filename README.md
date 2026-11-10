@@ -5,7 +5,7 @@ Ansible collection for automating Arista VeloCloud SD-WAN Orchestrator (VCO) ope
 ## Directory Structure
 
 ```
-wellington-demo/
+velo-api-ansible-demo/
 ├── ansible.cfg                            # Ansible configuration
 ├── requirements.txt                       # Python dependencies
 ├── setup_env.sh                           # Virtual environment bootstrap
