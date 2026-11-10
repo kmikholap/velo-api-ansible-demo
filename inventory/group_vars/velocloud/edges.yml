@@ -1,0 +1,57 @@
+# Default profile and model for all edges (can be overridden per-edge)
+vco_default_profile_name: "Quick Start Profile"
+vco_default_model: "edge6X0"
+
+# List of edges to provision — each edge gets its own WAN IP configuration
+edges_to_provision:
+  - name: "WLGN-EDGE-01"
+    model_number: "edge7X0"           # Optional, defaults to vco_default_model
+    profile_name: "Branch" # Optional, defaults to vco_default_profile_name
+    description: "Wellington Branch Office 1"
+    site:
+      contactName: "Konstantin Mikholap"
+      contactEmail: "konstantin.mikholap@arista.com"
+      streetAddress: "100 Main Street"
+      city: "Wellington"
+      state: "MA"
+      country: "US"
+      postalCode: "33414"
+    wan_interface: "GE3"              # Optional, defaults to GE3
+    wan_ip: "203.0.113.10"
+    wan_netmask: "255.255.255.248"
+    wan_gateway: "203.0.113.9"
+    send_activation_email: true
+    license_alias: "POC"
+    ha_enabled: true
+
+  - name: "WLGN-EDGE-02"
+    profile_name: "Branch"
+    model_number: "edge7X0"
+    description: "Wellington Branch Office 2"
+    site:
+      contactName: "K M"
+      contactEmail: "konstantin.mikholap@arista.com"
+      streetAddress: "200 Oak Avenue"
+      city: "Wellington"
+      state: "RI"
+      country: "US"
+      postalCode: "33414"
+    send_activation_email: true
+    license_alias: "POC"
+    ha_enabled: false
+
+  - name: "WLGN-EDGE-03"
+    model_number: "virtual"
+    description: "Wellington Virtual Edge (Lab)"
+    site:
+      contactName: "Lab Admin"
+      contactEmail: "kmikholap@gmail.com"
+      city: "Wellington"
+      state: "CT"
+      country: "US"
+    wan_ip: "10.200.1.10"
+    wan_netmask: "255.255.255.0"
+    wan_gateway: "10.200.1.1"
+    send_activation_email: true
+    license_alias: "POC"
+    ha_enabled: false

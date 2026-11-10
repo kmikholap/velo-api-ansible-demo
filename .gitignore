@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Pytest
+.pytest_cache/
+
+# Sensitive credentials
+inventory/group_vars/velocloud/auth.yml
+
+# Internal / archive
+archive/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code
+.claude/
+CLAUDE.md

@@ -1,0 +1,7 @@
+# Copy this file to auth.yml and fill in your VCO credentials
+# cp auth.yml.example auth.yml
+
+vco_orchestrator_url: "https://YOUR_VCO_HOSTNAME.velocloud.net"
+vco_api_token: "YOUR_VCO_API_TOKEN"
+vco_enterprise_id: YOUR_ENTERPRISE_ID
+vco_verify_ssl: true

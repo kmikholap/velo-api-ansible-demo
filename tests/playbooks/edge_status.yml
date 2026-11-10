@@ -1,0 +1,26 @@
+---
+- name: VeloCloud Edge Status Report
+  hosts: vco
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Get all edge statuses
+      arista.velocloud.vco_edge_status:
+        orchestrator_url: "{{ vco_orchestrator_url }}"
+        api_token: "{{ vco_api_token }}"
+        enterprise_id: "{{ vco_enterprise_id }}"
+        verify_ssl: "{{ vco_verify_ssl | default(true) }}"
+      register: edge_status
+
+    - name: Display edge status summary
+      ansible.builtin.debug:
+        msg: "Total edges: {{ edge_status.edge_count }}"
+
+    - name: Display edge status table
+      ansible.builtin.debug:
+        msg: "{{ edge_status.msg }}"
+
+    - name: Display detailed edge data
+      ansible.builtin.debug:
+        var: edge_status.edges

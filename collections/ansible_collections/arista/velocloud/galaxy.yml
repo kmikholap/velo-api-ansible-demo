@@ -1,0 +1,11 @@
+namespace: arista
+name: velocloud
+version: 1.0.0
+readme: README.md
+authors:
+  - Wellington Demo
+description: Ansible collection for Arista VeloCloud SD-WAN Orchestrator automation
+license:
+  - Apache-2.0
+dependencies: {}
+repository: ""
