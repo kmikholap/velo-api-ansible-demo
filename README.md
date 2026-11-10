@@ -25,14 +25,9 @@ wellington-demo/
 │   └── group_vars/velocloud/
 │       ├── auth.yml.example               # Credentials template (copy to auth.yml)
 │       └── edges.yml                      # Edge definitions
-├── playbooks/
-│   ├── provision_edges.yml                # Provision and configure edges
-│   └── edge_status.yml                    # Query edge status
-└── tests/
-    ├── conftest.py                        # Pytest fixtures (VCO client)
-    ├── test_vco_client.py                 # SDK unit tests
-    ├── test_edge_provision.py             # Provisioning integration tests
-    └── test_edge_status.py                # Status query tests
+└── playbooks/
+    ├── provision_edges.yml                # Provision and configure edges
+    └── edge_status.yml                    # Query edge status
 ```
 
 ## Prerequisites
@@ -104,18 +99,6 @@ ansible-playbook playbooks/edge_status.yml
 ansible-playbook playbooks/provision_edges.yml
 ```
 
-## Running Tests
-
-Tests run against a live VCO. Set your credentials via environment variables:
-
-```bash
-export VCO_URL="https://your-vco.velocloud.net"
-export VCO_TOKEN="your-api-token"
-export VCO_ENTERPRISE_ID="your-enterprise-id"
-
-pytest tests/ -v
-```
-
 ## Ansible Modules Reference
 
 ### `arista.velocloud.vco_facts`
@@ -150,6 +133,5 @@ To add new workflows:
 1. Create a new module in `collections/ansible_collections/arista/velocloud/plugins/modules/`
 2. Use `VcoClient` from `module_utils/vco_client.py` for API calls
 3. Add a playbook in `playbooks/` referencing the new module
-4. Add tests in `tests/`
 
 The `VcoClient` class wraps all VCO REST API calls (POST to `/portal/rest/<endpoint>` with token auth) and handles retries on rate limiting (HTTP 429).

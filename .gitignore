@@ -10,14 +10,8 @@ __pycache__/
 # Sensitive credentials
 inventory/group_vars/velocloud/auth.yml
 
-# Internal / archive
-archive/
-
 # IDE
 .vscode/
 .idea/
 *.swp
 
-# Claude Code
-.claude/
-CLAUDE.md
